@@ -3,6 +3,7 @@ const Place = require("../models/Place");
 
 const router = express.Router();
 
+// GET /locloc/places size=?
 router.get("/", async (req, res) => {
     try {
         const { size } = req.query;
