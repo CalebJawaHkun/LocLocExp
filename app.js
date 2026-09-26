@@ -9,8 +9,9 @@ const cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-const connectDB = require("./config/db");
-const placeRoutes = require("./routes/placeRoutes");
+const {connectDB} = require("./config/db");
+const placeRoutes = require("./routes/places");
+const landmarksRoutes = require("./routes/landmarks");
 
 var app = express();
 
@@ -26,5 +27,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/locloc/places', placeRoutes)
+app.use('/locloc/landmarks', landmarksRoutes)
 
 module.exports = app;

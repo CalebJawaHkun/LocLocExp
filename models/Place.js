@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { loclocDB } = require("../config/db");
 
 const placeSchema = new mongoose.Schema(
     {},
@@ -7,4 +8,4 @@ const placeSchema = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model("Place", placeSchema, "places");
+module.exports = loclocDB.model("Place", placeSchema, "places");

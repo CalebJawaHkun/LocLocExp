@@ -10,4 +10,9 @@ const connectDB = async () => {
     }
 };
 
-module.exports = connectDB;
+const loclocDB = mongoose.connection.useDb('locloc')
+const yangon_travelDB = mongoose.connection.useDb('yangon_travel')
+
+module.exports = {
+    connectDB, loclocDB, yangon_travelDB
+};
